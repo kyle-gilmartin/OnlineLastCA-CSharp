@@ -74,12 +74,12 @@
         <TextBlock x:Name="TopForward" HorizontalAlignment="Left" Margin="718,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="122" FontSize="16" Grid.RowSpan="2"/>
         <TextBlock x:Name="TopMid" HorizontalAlignment="Left" Margin="718,25.044,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="122" FontSize="16" Grid.Row="1"/>
         <TextBlock x:Name="TopDefender" HorizontalAlignment="Left" Margin="718,84.044,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="122" FontSize="16" Grid.Row="1"/>
-        <TextBlock x:Name="TopGK" HorizontalAlignment="Left" Margin="718,152.044,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="122" FontSize="16" Grid.Row="1"/>
+        <TextBlock x:Name="TopGK" HorizontalAlignment="Left" Margin="718,142.044,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="122" FontSize="16" Grid.Row="1"/>
         <Label Content="Manger : " HorizontalAlignment="Left" Margin="578,214,0,0" VerticalAlignment="Top" Width="106" Height="41" FontSize="20" FontWeight="Bold"/>
         <Label Content="Top Forward :" HorizontalAlignment="Left" Margin="535,271,0,0" VerticalAlignment="Top" Width="149" Height="41" FontSize="20" FontWeight="Bold"/>
         <Label Content="Top midfielder :" HorizontalAlignment="Left" Margin="523,14.044,0,0" VerticalAlignment="Top" Width="161" Height="41" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
         <Label Content="Top Defender :" HorizontalAlignment="Left" Margin="535,73.044,0,0" VerticalAlignment="Top" Width="149" Height="41" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
-        <Label Content="Top Goalkeeper :" HorizontalAlignment="Left" Margin="508,141.044,0,0" VerticalAlignment="Top" Width="176" Height="41" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
+        <Label Content="Top Goalkeeper :" HorizontalAlignment="Left" Margin="508,135.044,0,0" VerticalAlignment="Top" Width="176" Height="41" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="754" Source="epl-top-banner_new.png" StretchDirection="DownOnly" Stretch="Fill" Margin="141,0,-0.407,0"/>
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="141" Source="Premier-League-logo.png" Stretch="Fill"/>
         <Rectangle Fill="#FF5F0861" HorizontalAlignment="Left" Height="472" Margin="0,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="136" Grid.RowSpan="2"/>
