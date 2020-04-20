@@ -1,0 +1,93 @@
+﻿<Window x:Class="OnlineLastCA_CSharp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineLastCA_CSharp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="900" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="mainButtonRound" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#EAB01E"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#EAB01E"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#F1CA68"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#F1CA68"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FFB1B1B1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="64*"/>
+        </Grid.RowDefinitions>
+
+        <ListBox x:Name="ListTeams" HorizontalAlignment="Left" Height="297" Margin="141,214,0,0" VerticalAlignment="Top" Width="283" SelectionChanged="ListBox_SelectionChanged" Background="#FFC5C5C5" Grid.RowSpan="2"/>
+        <TextBlock x:Name="TBMarnager" HorizontalAlignment="Left" Margin="718,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="122" FontSize="16"/>
+        <TextBlock x:Name="TopForward" HorizontalAlignment="Left" Margin="718,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="122" FontSize="16" Grid.RowSpan="2"/>
+        <TextBlock x:Name="TopMid" HorizontalAlignment="Left" Margin="718,25.044,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="122" FontSize="16" Grid.Row="1"/>
+        <TextBlock x:Name="TopDefender" HorizontalAlignment="Left" Margin="718,84.044,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="122" FontSize="16" Grid.Row="1"/>
+        <TextBlock x:Name="TopGK" HorizontalAlignment="Left" Margin="718,152.044,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="122" FontSize="16" Grid.Row="1"/>
+        <Label Content="Manger : " HorizontalAlignment="Left" Margin="578,214,0,0" VerticalAlignment="Top" Width="106" Height="41" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Top Forward :" HorizontalAlignment="Left" Margin="535,271,0,0" VerticalAlignment="Top" Width="149" Height="41" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Top midfielder :" HorizontalAlignment="Left" Margin="523,14.044,0,0" VerticalAlignment="Top" Width="161" Height="41" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
+        <Label Content="Top Defender :" HorizontalAlignment="Left" Margin="535,73.044,0,0" VerticalAlignment="Top" Width="149" Height="41" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
+        <Label Content="Top Goalkeeper :" HorizontalAlignment="Left" Margin="508,141.044,0,0" VerticalAlignment="Top" Width="176" Height="41" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="754" Source="epl-top-banner_new.png" StretchDirection="DownOnly" Stretch="Fill" Margin="141,0,-0.407,0"/>
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="141" Source="Premier-League-logo.png" Stretch="Fill"/>
+        <Rectangle Fill="#FF5F0861" HorizontalAlignment="Left" Height="472" Margin="0,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="136" Grid.RowSpan="2"/>
+        <Button x:Name="forwardbutton" Content="About" HorizontalAlignment="Left" Margin="26,199,0,0" VerticalAlignment="Top" Width="75" Click="forwardbutton_Click"
+                Background="#FF64CCF1"
+                Foreground="White"
+                FontSize="20" Style="{DynamicResource mainButtonRound}"/>
+
+
+    </Grid>
+</Window>
