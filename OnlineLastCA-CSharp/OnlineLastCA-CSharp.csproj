@@ -90,6 +90,7 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Teams.cs" />
     <Compile Include="TeamTBL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,14 @@ namespace OnlineLastCA_CSharp
     /// </summary>
     public partial class Window1 : Window
     {
+      
+       
         public Window1()
         {
             InitializeComponent();
+           
+            
+          
         }
 
         private void backbutton_Click(object sender, RoutedEventArgs e)
@@ -37,5 +43,7 @@ namespace OnlineLastCA_CSharp
             MainWindow mw = new MainWindow();
             mw.Show();
         }
+
+       
     }
 }

@@ -73,6 +73,7 @@
                 Foreground="White"
                 FontSize="20" Style="{DynamicResource roundedbutton}"
                 />
+
         <Rectangle Fill="#FFBBBBBB" Height="320" Margin="358,191,0,0" Stroke="#FFBBBBBB" VerticalAlignment="Top" Width="307" HorizontalAlignment="Left"/>
         <Label Content="Coded by:" HorizontalAlignment="Left" Margin="459,223,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
         <Label Content="Kyle gilmartin" HorizontalAlignment="Left" Margin="471,259,0,0" VerticalAlignment="Top"/>
