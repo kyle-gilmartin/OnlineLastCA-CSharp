@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OnlineLastCA_CSharp"
         mc:Ignorable="d"
-        Title="Window1"  Height="600" Width="900" Closed="Window_Closed">
+        Title="Window1"  Height="600" Width="900" Closed="Window_Closed" Loaded="Window_Loaded" >
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -64,21 +64,34 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="754" Source="epl-top-banner_new.png" StretchDirection="DownOnly" Stretch="Fill" Margin="141,0,-0.407,0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="653*"/>
+            <ColumnDefinition Width="242*"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="754" Source="epl-top-banner_new.png" StretchDirection="DownOnly" Stretch="Fill" Margin="141,0,-0.407,0" Grid.ColumnSpan="2"/>
         <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="141" Source="Premier-League-logo.png" Stretch="Fill"/>
-        <Rectangle Fill="#FF5F0861" HorizontalAlignment="Left" Height="472" Margin="0,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="136" Grid.RowSpan="2"/>
+        <Rectangle Fill="#FF5F0861" HorizontalAlignment="Left" Height="472" Margin="0,100,0,0" Stroke="Black" VerticalAlignment="Top" Width="136"/>
+
+
 
         <Button x:Name="backbutton" Content="Home" HorizontalAlignment="Left" Margin="26,199,0,0" VerticalAlignment="Top" Width="75" Click="backbutton_Click"
                 Background="#FF64CCF1"
                 Foreground="White"
                 FontSize="20" Style="{DynamicResource roundedbutton}"
                 />
+        <ListBox x:Name="lbNames" HorizontalAlignment="Left" Height="357" Margin="197,173,0,0" VerticalAlignment="Top" Width="195" SelectionChanged="lbNames_SelectionChanged"/>
+        <ListBox x:Name="pName" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="34" Margin="81.516,199,0,0" VerticalAlignment="Top" Width="136" FontSize="16"/>
+        <ListBox x:Name="pClub" Grid.Column="1" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Height="34" Margin="81.516,255,0,0" VerticalAlignment="Top" Width="136" FontSize="16"/>
+        <ListBox x:Name="pPostion" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="34" Margin="81.516,320,0,0" VerticalAlignment="Top" Width="136" FontSize="16"/>
+        <ListBox x:Name="pWage" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="34" Margin="81.516,374,0,0" VerticalAlignment="Top" Width="136" FontSize="16"/>
+        <ListBox x:Name="pHeight" Grid.Column="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="34" Margin="81.516,430,0,0" VerticalAlignment="Top" Width="136" FontSize="16"/>
+        <Label Content="Place of birth"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="593,199,0,0" VerticalAlignment="Top" Height="34" Grid.ColumnSpan="2" Width="141" FontSize="20" FontWeight="Bold">
 
-        <Rectangle Fill="#FFBBBBBB" Height="320" Margin="358,191,0,0" Stroke="#FFBBBBBB" VerticalAlignment="Top" Width="307" HorizontalAlignment="Left"/>
-        <Label Content="Coded by:" HorizontalAlignment="Left" Margin="459,223,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <Label Content="Kyle gilmartin" HorizontalAlignment="Left" Margin="471,259,0,0" VerticalAlignment="Top"/>
-        <Label Content="Version:" HorizontalAlignment="Left" Margin="467,314,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
-        <Label Content="1.0" HorizontalAlignment="Left" Margin="495,350,0,0" VerticalAlignment="Top"/>
+        </Label>
+        <Label Content="Club" HorizontalAlignment="Left" Margin="9.516,255,0,0" VerticalAlignment="Top" Height="34" Width="61" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Postion" HorizontalAlignment="Left" Margin="634,320,0,0" VerticalAlignment="Top" Height="34" Grid.ColumnSpan="2" Width="81" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Wage" HorizontalAlignment="Left" Margin="652,374,0,0" VerticalAlignment="Top" Height="40" Grid.ColumnSpan="2" Width="63" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Height"   HorizontalAlignment="Left" Margin="634,430,0,0" VerticalAlignment="Top" Height="40" Grid.ColumnSpan="2" Width="75" FontSize="20" FontWeight="Bold"/>
 
     </Grid>
 </Window>
